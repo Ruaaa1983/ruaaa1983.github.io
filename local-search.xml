@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>使用vscode进行go语言开发</title>
+    <link href="/2023/01/30/%E4%BD%BF%E7%94%A8vscode%E8%BF%9B%E8%A1%8Cgo%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91/"/>
+    <url>/2023/01/30/%E4%BD%BF%E7%94%A8vscode%E8%BF%9B%E8%A1%8Cgo%E8%AF%AD%E8%A8%80%E5%BC%80%E5%8F%91/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>vscode作为开发人员最常用的文本编辑器来说，兼备了许多功能，例如代码补全，调试等功能，并且带有丰富的插件仓库可以让我们拓展vscode的能力。</p><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>如果要搭建开发环境，你需要满足下列的条件：</p><ul><li>安装了vscode</li><li>安装了go</li><li>下载go-vscode的拓展</li></ul><h1 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h1><p>安装vscode很简单，我们只需要前往vscode的官网进行下载即可。</p><h1 id="安装go"><a href="#安装go" class="headerlink" title="安装go"></a>安装go</h1><p>这里我使用的是OpenSUSE，其他的发行版安装go的操作也是大差不差的。我们只需要在终端中输入：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo zypper install go<br></code></pre></td></tr></table></figure><p>就可以了。随后，我们使用<code>go version</code>来确保我们已经正确的安装了go。如果一切正常的话，那么你应该会看到下列信息：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">xxx@xxx:~&gt; go version<br>go version go1.17.9 linux/amd64<br></code></pre></td></tr></table></figure><h1 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h1><p>我们首先要执行一些基础操作。同样的打开你的终端，输入下列命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">go env -w GO111MODULE=on         #Golang1.16默认开启,1.16一下需要执行这条命令<br>go env -w  GOPROXY=https://goproxy.cn,direct     #设置七牛CDN<br></code></pre></td></tr></table></figure><p>随后，我们需要指定go的路径。我们可以通过<code>whereis go</code>来快速找到go的安装目录。随后我们需要执行下面的这条命令：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">go  env -w GOBIN=/usr/lib64/go/1.17#此处根据自身进行修改<br></code></pre></td></tr></table></figure><p>在执行完毕后，我们需要使用<code>go env</code>来进行验证。如果输出的<code>GOBIN</code>正确的话，就像下面的那样：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">GOBIN=&quot;/usr/lib64/go/1.17&quot;<br></code></pre></td></tr></table></figure><p>那么恭喜你，成功了。设置好环境变量之后，vscode下载的插件也会存放到此处。</p><h1 id="配置vscode"><a href="#配置vscode" class="headerlink" title="配置vscode"></a>配置vscode</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>在启动vscode后，我们点击右侧的<strong>插件</strong>按钮，随后搜索<strong>go</strong>，选择第一个也就是下载最多的插件，安装即可。</p><h2 id="更新插件"><a href="#更新插件" class="headerlink" title="更新插件"></a>更新插件</h2><p>随后我们按住<code>Ctrl+Shift+P</code>输入<code>Go:Install/Update Tools</code>，全选插件，等待插件更新即可。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>技术</category>
+      
+      <category>Go</category>
+      
+      <category>编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>技术</tag>
+      
+      <tag>编程</tag>
+      
+      <tag>Go</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>解决hexo提交后CNAME被删除自定义域名失效的问题</title>
     <link href="/2023/01/29/%E8%A7%A3%E5%86%B3hexo%E6%8F%90%E4%BA%A4%E5%90%8ECNAME%E8%A2%AB%E5%88%A0%E9%99%A4%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <url>/2023/01/29/%E8%A7%A3%E5%86%B3hexo%E6%8F%90%E4%BA%A4%E5%90%8ECNAME%E8%A2%AB%E5%88%A0%E9%99%A4%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%A4%B1%E6%95%88%E7%9A%84%E9%97%AE%E9%A2%98/</url>
